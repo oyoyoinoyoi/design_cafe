@@ -1,0 +1,100 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Lato', sans-serif;
+
+
+}
+
+.container {
+	width: 1020px;
+	height: 100vh;
+	margin: 0 auto;
+}
+
+@mixin section2() {
+	h1 {
+		border-collapse: collapse;
+		color: #182b2e;
+	}
+
+	background-color: #f9f9f9;
+}
+
+@mixin about-common() {
+	width: 25%;
+	height: 50vh;
+	background-color: #fff;
+	float: left;
+	margin-right: 3%;
+	position: relative;
+}
+
+@mixin about-text-common() {
+	img {
+		height: 25vh;
+		position: relative;
+	}
+
+	h3 {
+		display: inline-block;
+		top: 50%;
+		margin-top: 10px;
+	}
+
+	p3 {
+		display: block;
+		top: 50%;
+		line-height:4vh;
+		//ロードしたら行間変わる不安定
+//		span1{
+//			line-height:3.2em;
+//		}
+//		span2{
+//			line-height:3.2em;
+//		}
+	}
+
+
+}
+
+#about {
+	@include section2();
+	overflow: hidden;
+	position: absolute;
+
+	.box-about {
+		width: 100%;
+		height: 50vh;
+		position: relative;
+		left: 9.5%;
+		top: 25%;
+
+		.left-about {
+			@include about-common();
+			@include about-text-common();
+			p3{
+			}
+		}
+
+		.center-about {
+			@include about-common();
+			@include about-text-common();
+		}
+
+		.right-about {
+			@include about-common();
+			@include about-text-common();
+		}
+	}
+}
+
+#menu {
+	@include section2();
+}
+
+
+#access {
+	@include section2();
+
+}

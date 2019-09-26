@@ -1,0 +1,112 @@
+/* line 1, /Users/user/Desktop/design_cafe/sass/common.scss */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif; }
+
+/* line 9, /Users/user/Desktop/design_cafe/sass/common.scss */
+.container {
+  width: 1020px;
+  height: 100vh;
+  margin: 0 auto; }
+
+/* line 61, /Users/user/Desktop/design_cafe/sass/common.scss */
+#about {
+  background-color: #f9f9f9;
+  overflow: hidden;
+  position: absolute; }
+  /* line 16, /Users/user/Desktop/design_cafe/sass/common.scss */
+  #about h1 {
+    border-collapse: collapse;
+    color: #182b2e; }
+  /* line 66, /Users/user/Desktop/design_cafe/sass/common.scss */
+  #about .box-about {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    left: 9.5%;
+    top: 25%; }
+    /* line 73, /Users/user/Desktop/design_cafe/sass/common.scss */
+    #about .box-about .left-about {
+      width: 25%;
+      height: 50vh;
+      background-color: #fff;
+      float: left;
+      margin-right: 3%;
+      position: relative; }
+      /* line 34, /Users/user/Desktop/design_cafe/sass/common.scss */
+      #about .box-about .left-about img {
+        height: 25vh;
+        position: relative; }
+      /* line 39, /Users/user/Desktop/design_cafe/sass/common.scss */
+      #about .box-about .left-about h3 {
+        display: inline-block;
+        top: 50%;
+        margin-top: 10px; }
+      /* line 45, /Users/user/Desktop/design_cafe/sass/common.scss */
+      #about .box-about .left-about p3 {
+        display: block;
+        top: 50%;
+        line-height: 4vh; }
+    /* line 80, /Users/user/Desktop/design_cafe/sass/common.scss */
+    #about .box-about .center-about {
+      width: 25%;
+      height: 50vh;
+      background-color: #fff;
+      float: left;
+      margin-right: 3%;
+      position: relative; }
+      /* line 34, /Users/user/Desktop/design_cafe/sass/common.scss */
+      #about .box-about .center-about img {
+        height: 25vh;
+        position: relative; }
+      /* line 39, /Users/user/Desktop/design_cafe/sass/common.scss */
+      #about .box-about .center-about h3 {
+        display: inline-block;
+        top: 50%;
+        margin-top: 10px; }
+      /* line 45, /Users/user/Desktop/design_cafe/sass/common.scss */
+      #about .box-about .center-about p3 {
+        display: block;
+        top: 50%;
+        line-height: 4vh; }
+    /* line 85, /Users/user/Desktop/design_cafe/sass/common.scss */
+    #about .box-about .right-about {
+      width: 25%;
+      height: 50vh;
+      background-color: #fff;
+      float: left;
+      margin-right: 3%;
+      position: relative; }
+      /* line 34, /Users/user/Desktop/design_cafe/sass/common.scss */
+      #about .box-about .right-about img {
+        height: 25vh;
+        position: relative; }
+      /* line 39, /Users/user/Desktop/design_cafe/sass/common.scss */
+      #about .box-about .right-about h3 {
+        display: inline-block;
+        top: 50%;
+        margin-top: 10px; }
+      /* line 45, /Users/user/Desktop/design_cafe/sass/common.scss */
+      #about .box-about .right-about p3 {
+        display: block;
+        top: 50%;
+        line-height: 4vh; }
+
+/* line 92, /Users/user/Desktop/design_cafe/sass/common.scss */
+#menu {
+  background-color: #f9f9f9; }
+  /* line 16, /Users/user/Desktop/design_cafe/sass/common.scss */
+  #menu h1 {
+    border-collapse: collapse;
+    color: #182b2e; }
+
+/* line 97, /Users/user/Desktop/design_cafe/sass/common.scss */
+#access {
+  background-color: #f9f9f9; }
+  /* line 16, /Users/user/Desktop/design_cafe/sass/common.scss */
+  #access h1 {
+    border-collapse: collapse;
+    color: #182b2e; }
+
+/*# sourceMappingURL=common.css.map */
