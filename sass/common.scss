@@ -2,23 +2,88 @@
 	margin: 0;
 	padding: 0;
 	font-family: 'Lato', sans-serif;
-
-
 }
 
 .container {
 	width: 1020px;
 	height: 100vh;
-	margin: 0 auto;
+	margin: 0px auto;
+	border: 1px solid #000;
 }
 
+//header story
+@mixin section1() {
+	h2 {
+		color: #fff;
+
+	}
+
+	p1 {
+		color: #fff;
+	}
+}
+
+//about ac
 @mixin section2() {
 	h1 {
-		border-collapse: collapse;
 		color: #182b2e;
+		position: relative;
+		top: 12.5vh;
+		left: 460px;
 	}
 
 	background-color: #f9f9f9;
+}
+
+
+
+#header {
+	@include section1();
+	width: 1020px;
+	height: 100vh;
+	background-color: #aa86e3;
+
+	.home {
+		position: relative;
+		top: 30vh;
+		left: 360px;
+		display: block;
+
+		h2 {
+			font-weight: 700;
+			font-size: 66px;
+		}
+
+		p1 {
+			margin-left: 57px;
+			font-weight: 300;
+			font-size: 25px;
+		}
+	}
+
+	nav {
+		margin-left: 570px;
+		overflow: hidden;
+
+		li {
+			list-style-type: none;
+			float: left;
+
+			a {
+				text-decoration: none;
+				display: block;
+				font-family: 'Roboto', sans-serif;
+				font-weight: 700;
+				color: #fff;
+				margin: 9px;
+			}
+
+		}
+
+		//background-image: url("background01.jpg");
+		//background-size: cover;
+
+	}
 }
 
 @mixin about-common() {
@@ -45,14 +110,16 @@
 	p3 {
 		display: block;
 		top: 50%;
-		line-height:4vh;
-		//ロードしたら行間変わる不安定
-//		span1{
-//			line-height:3.2em;
-//		}
-//		span2{
-//			line-height:3.2em;
-//		}
+		line-height: 4vh;
+
+		//ロードしたら行間変わる不安定だったけどいけた
+		span1 {
+			line-height: 3em;
+		}
+
+		span2 {
+			line-height: 2em;
+		}
 	}
 
 
@@ -73,8 +140,6 @@
 		.left-about {
 			@include about-common();
 			@include about-text-common();
-			p3{
-			}
 		}
 
 		.center-about {
@@ -89,6 +154,34 @@
 	}
 }
 
+#story {
+	background-color: #182b2e;
+
+	.left-story {
+		width: 50%;
+		height: 100%;
+		overflow: hidden;
+		float: left;
+	}
+
+	.right-story {
+		display: block;
+		position: relative;
+		left: 10%;
+		top: 20%;
+		@include section1();
+
+		h2 {
+			line-height: 33px;
+		}
+
+		p1 {
+			line-height: 33px;
+		}
+	}
+
+}
+
 #menu {
 	@include section2();
 }
@@ -96,5 +189,14 @@
 
 #access {
 	@include section2();
-
+	.box-access{
+		text-align: center;
+		width: 100%;
+	.left-access{
+	}
+	.right-access{
+		
+	}
+	}
+	
 }
