@@ -23,7 +23,7 @@
 	}
 }
 
-//about ac
+//about access
 @mixin section2() {
 	h1 {
 		color: #182b2e;
@@ -31,8 +31,6 @@
 		top: 12.5vh;
 		left: 460px;
 	}
-
-	background-color: #f9f9f9;
 }
 
 
@@ -129,6 +127,7 @@
 	@include section2();
 	overflow: hidden;
 	position: absolute;
+	background-color: #f9f9f9;
 
 	.box-about {
 		width: 100%;
@@ -186,17 +185,38 @@
 	@include section2();
 }
 
+@mixin access-common() {
+	width: 37.5%;
+	height: 48vh;
+	float: left;
+	border: 1px solid #000;
+}
 
 #access {
+	//section2はaccessの装飾内容だぞ
 	@include section2();
-	.box-access{
-		text-align: center;
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	background-color: #f9f9f9;
+
+	.box-access {
 		width: 100%;
-	.left-access{
+		height: 50vh;
+		position: relative;
+		left: 9.5%;
+		top: 25%;
+
+		.left-access {
+			@include access-common();
+			overflow: hidden;
+		}
+
+		.right-access {
+
+			background-color: #fff;
+			@include access-common();
+		}
 	}
-	.right-access{
-		
-	}
-	}
-	
+
 }

@@ -11,8 +11,12 @@ git push
 ギットの方リロードしたら追加されてる 
 
 
-ーーーできないことーーーー
-＠headerにbackgroundimageできないいい
+ーーーメンターさんに質問ーーーー
+＠accessのmargin が切れてる理由がわからないです
+
+
+ーーーできてないことーーーー
+＠headerにbackgroundimageできてない
 
 
 
