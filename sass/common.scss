@@ -12,22 +12,27 @@
 }
 
 //スクロールフェードイン
-.fadein{
+#main {
+	width: 1020px;
+	height: 410vh;
+}
+
+.fadein {
 	opacity: 0;
 	transform: translate(0, 50px);
 	transition: all 0.5s;
+
 	.scrollin {
 		opacity: 1;
 		transform: translate(0, 0);
 	}
 }
+
 //header story
 @mixin section1() {
 	h2 {
 		color: #fff;
-
 	}
-
 	p1 {
 		color: #fff;
 	}
@@ -247,12 +252,14 @@
 	@include section2();
 
 	background-color: #f9f9f9;
+
 	.menu-contant {
 		width: 100%;
 		height: 50vh;
 		position: relative;
 		left: 19%;
 		top: 25%;
+
 		.coffee {
 			@include menu-common();
 			@include menu-text-common();
