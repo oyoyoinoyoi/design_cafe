@@ -12,11 +12,11 @@ git push
 
 
 ーーーメンターさんに質問ーーーー
-＠accessのmargin が切れてる理由がわからないです
+@スクロールでフェードインできない
+@ナビのアニメーションのトランジションきかない
 
 
 ーーーできてないことーーーー
-＠headerにbackgroundimageできてない
 
 
 
@@ -26,4 +26,8 @@ git push
  
 @ナビの一気にバッて出るの忘れてた調べた(くの逆、li*4、aじゃない)
 
-@floatで浮いててはみ出てるの消すの忘れてたoverflow:hedden;な
+@floatで浮いててはみ出てるの消すの忘れてたoverflow:hedden;
+
+＠accessのmargin が切れてる理由がわからないです(解決)
+
+＠headerにbackgroundimageできた

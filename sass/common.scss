@@ -1,16 +1,26 @@
 * {
 	margin: 0;
 	padding: 0;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300, 700; //100, 300, 400, 500, 700, 900
 }
 
 .container {
 	width: 1020px;
 	height: 100vh;
 	margin: 0px auto;
-	border: 1px solid #000;
 }
 
+//スクロールフェードイン
+.fadein{
+	opacity: 0;
+	transform: translate(0, 50px);
+	transition: all 0.5s;
+	.scrollin {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
 //header story
 @mixin section1() {
 	h2 {
@@ -26,25 +36,24 @@
 //about access
 @mixin section2() {
 	h1 {
+		font-size: 250%;
 		color: #182b2e;
 		position: relative;
 		top: 12.5vh;
-		left: 460px;
+		text-align: center;
+		//		left: 460px;
 	}
 }
 
-
-
+//--------------------------------------------------------------
 #header {
 	@include section1();
-	width: 1020px;
-	height: 100vh;
-	background-color: #aa86e3;
 
 	.home {
-		position: relative;
-		top: 30vh;
-		left: 360px;
+		z-index: 2;
+		position: absolute;
+		top: 40vh;
+		left: 470px;
 		display: block;
 
 		h2 {
@@ -60,6 +69,10 @@
 	}
 
 	nav {
+		font-size: 19px;
+		z-index: 2;
+		position: absolute;
+		float: left;
 		margin-left: 570px;
 		overflow: hidden;
 
@@ -69,21 +82,35 @@
 
 			a {
 				text-decoration: none;
-				display: block;
-				font-family: 'Roboto', sans-serif;
+				display: inline-block;
 				font-weight: 700;
 				color: #fff;
 				margin: 9px;
+				transition: 2s;
+
+				&:hover {
+					border-bottom: 1px solid #FFF;
+				}
 			}
-
 		}
+	}
 
-		//background-image: url("background01.jpg");
-		//background-size: cover;
+	#slide {
+		position: relative;
 
+		img {
+			overflow: hidden;
+			width: 1020px;
+			height: 100vh;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
 	}
 }
 
+
+//--------------------------------------------------------------
 @mixin about-common() {
 	width: 25%;
 	height: 50vh;
@@ -91,42 +118,47 @@
 	float: left;
 	margin-right: 3%;
 	position: relative;
+	border-radius: 10px;
+	box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.03);
 }
 
 @mixin about-text-common() {
 	img {
+		border-radius: 10px 10px 0px 0px;
 		height: 25vh;
 		position: relative;
 	}
 
 	h3 {
+		font-size: 18px;
 		display: inline-block;
+		position: relative;
 		top: 50%;
-		margin-top: 10px;
+		left: 11.5%;
+		margin-top: 20px;
 	}
 
 	p3 {
+		color: #b1b1b1;
 		display: block;
+		margin-top: 5px;
+		margin-left: 30px;
 		top: 50%;
-		line-height: 4vh;
-
-		//ロードしたら行間変わる不安定だったけどいけた
-		span1 {
-			line-height: 3em;
-		}
-
-		span2 {
-			line-height: 2em;
-		}
+		font-size: 14px;
+		line-height: 20px;
+		//		//ロードしたら行間変わる不安定だったけどいけた
+		//		span1 {
+		//			line-height: 3em;
+		//		}
+		//
+		//		span2 {
+		//			line-height: 2em;
+		//		}
 	}
-
-
 }
 
 #about {
 	@include section2();
-	overflow: hidden;
-	position: absolute;
 	background-color: #f9f9f9;
 
 	.box-about {
@@ -153,6 +185,7 @@
 	}
 }
 
+//--------------------------------------------------------------
 #story {
 	background-color: #182b2e;
 
@@ -181,42 +214,204 @@
 
 }
 
-#menu {
-	@include section2();
+//--------------------------------------------------------------
+@mixin menu-common() {
+	width: 30%;
+	height: 50vh;
+	background-color: #fff;
+	float: left;
+	margin-right: 3%;
+	position: relative;
+	border-radius: 10px;
+	box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.03);
 }
 
-@mixin access-common() {
-	width: 37.5%;
-	height: 48vh;
-	float: left;
-	border: 1px solid #000;
+@mixin menu-text-common() {
+	img {
+		width: 100%;
+		height: 60%;
+		border-radius: 10px 10px 0px 0px;
+	}
+
+	h3 {
+		color: #182b2e;
+		font-size: 40px;
+		display: block;
+		margin: 10px 0px 0px 10px;
+		border-left: 13px solid #182b2e;
+		padding-left: 10px;
+	}
 }
+
+#menu {
+	@include section2();
+
+	background-color: #f9f9f9;
+	.menu-contant {
+		width: 100%;
+		height: 50vh;
+		position: relative;
+		left: 19%;
+		top: 25%;
+		.coffee {
+			@include menu-common();
+			@include menu-text-common();
+		}
+
+		.tea {
+			@include menu-common();
+			@include menu-text-common();
+		}
+	}
+
+}
+
+//--------------------------------------------------------------
+@mixin access-common() {
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+//アクセスの詳細テーブルでできるかも思ったけど諦めた残り
+//@mixin right-access-common() {
+//	display: block;
+//	td {
+//		display: block;
+//	}
+//
+//	td1 {
+//		display: block;
+//	}
+//}
+
 
 #access {
 	//section2はaccessの装飾内容だぞ
 	@include section2();
 	display: block;
-	overflow: hidden;
-	position: absolute;
 	background-color: #f9f9f9;
 
 	.box-access {
-		width: 100%;
+		width: 75%;
 		height: 50vh;
 		position: relative;
-		left: 9.5%;
+		left: 12.5%;
 		top: 25%;
+		border-radius: 10px;
+		box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.07);
 
 		.left-access {
+			border-radius: 10px 0px 0px 10px;
 			@include access-common();
 			overflow: hidden;
 		}
 
 		.right-access {
-
+			border-radius: 0px 10px 10px 0px;
 			background-color: #fff;
 			@include access-common();
+
+			.right-access-common {
+				background-color: #ef3636;
+
+				h3 {
+					float: left;
+					display: block;
+					position: relative;
+					top: 50px;
+					left: 15%;
+					line-height: 0px;
+					font-size: 13px;
+
+					span {
+						line-height: 120px;
+					}
+				}
+
+				p3 {
+					letter-spacing: 0.7px;
+					color: #b1b1b1;
+					float: left;
+					display: block;
+					position: relative;
+					top: 34px;
+					left: 20%;
+					font-size: 12px;
+					line-height: 20px;
+
+					span {
+						margin-right: 10px;
+						line-height: 33px;
+					}
+
+					span1 {
+						margin-right: 18px;
+						line-height: 33px;
+					}
+				}
+			}
 		}
 	}
 
+	a {
+		display: block;
+		position: relative;
+		top: 200px;
+		text-align: center;
+		text-decoration: none;
+		padding: 7px 14px;
+		margin: 0px 440px;
+		background-color: #182b2e;
+		color: #fff;
+		border-radius: 5px;
+		font-weight: 700;
+		transition: 1s;
+
+		&:hover {
+			color: #182b2e;
+			border: 1px solid #182b2e;
+			background-color: #fff;
+		}
+	}
+}
+
+//
+//			.Weekday {
+//				display: block;
+//				td {
+//					display: block;
+//					float: left;
+//				}
+//			}
+//
+//			.Holiday {
+//				display: inline-block;
+//				td {
+//					display: block;
+//					overflow: hidden;
+//				}
+//			}
+//		}
+
+//			.Weekday {
+//				@include right-access-common();
+//				background-color: #00e2cf;
+//			}
+//
+//			.Holiday {
+//				@include right-access-common();
+//				background-color: #e61727;
+//				/* 背景色指定 */
+//			}
+
+footer {
+	width: 1020px;
+	margin: 0px auto;
+	padding: 30px 0px;
+	text-align: center;
+	background-color: #182b2e;
+	color: #fff;
+	font-weight: 700;
+	font-size: 14px;
 }

@@ -6,13 +6,19 @@
 	<title>DesignCafe</title>
 	<link rel="stylesheet" href="sass/common.css">
 
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 	<!--ここからヘッダー-->
 	<div id="header" class="container">
+		<div id="slide">
+			<img src="img/background01.jpg">
+			<img src="img/background02.jpg">
+			<img src="img/background03.jpg">
+			<img src="img/background04.jpg">
+		</div>
 		<nav>
 			<ul>
 				<li><a href="#header">HOME</a></li>
@@ -26,10 +32,11 @@
 			<h2>Design Cafe</h2>
 			<p1>Welcome to Designer</p1>
 		</div>
+
 	</div>
 
 	<!--ここからメインコンテンツ-->
-	<div id="main" class="container">
+	<div id="main" class="container fadein">
 
 		<!--アバウト-->
 		<div id="about" class="container">
@@ -39,21 +46,21 @@
 				<div class="left-about">
 					<img src="img/space.jpg" alt="space" width="100%">
 					<h3>Creative Space</h3>
-					<p3>People who stay quietly alone, those<br>
-						<span1>who enjoy spending time with<br></span1>
-						<span2>friends, a relaxing cafe at each pace.</span2>
+					<p3>People who stay quietly alone,<br> those
+						who enjoy spending time<br> with
+						friends, a relaxing cafe at<br> each pace.
 					</p3>
 
 				</div>
 				<div class="center-about">
 					<img src="img/coffee.jpg" alt="coffee" width="100%">
 					<h3>Special Blend</h3>
-					<p3>Authentic roasting coffee green<br>beans grown only with natural<br>blessings Tipica, which is the Arabica<br>species, in the shop.</p3>
+					<p3>Authentic roasting coffee green<br>beans grown only with natural<br>blessings Tipica, which is the<br> Arabica species, in the shop.</p3>
 				</div>
 				<div class="right-about">
 					<img src="img/designer.jpg" alt="designer" width="100%">
 					<h3>Designer Community</h3>
-					<p3>Authentic roasting coffee green<br>beans grown only with natural<br>blessings Tipica, which is the Arabica<br>species, in the shop.</p3>
+					<p3>Authentic roasting coffee green<br>beans grown only with natural<br>blessings Tipica, which is the<br> Arabica species, in the shop.</p3>
 				</div>
 			</div>
 		</div>
@@ -76,8 +83,17 @@
 	<!--メニュー-->
 	<div id="menu" class="container">
 		<h1>MENU</h1>
+		<div class="menu-contant">
+		<div class="coffee">
+			<img src="img/menu-coffee.jpg" alt="coffee">
+			<h3>Coffee</h3>
+		</div>
+		<div class="tea">
+			<img src="img/menu-tea.jpg" alt="tea">
+			<h3>Tea</h3>
+		</div>
 	</div>
-
+</div>
 	<!--アクセス-->
 	<div id="access" class="container">
 		<h1>ACCESS</h1>
@@ -88,11 +104,41 @@
 			</div>
 			<div class="right-access">
 				<!--			文字-->
-				<h3>Hours<br>Address</h3>
-				<p3>Weekday 10:00~21:00<br>Holiday 10:00~23:00<br>Japan, 2 - chome Minami - Azabu Minato <br>- ku, Tokyo 12-3 Life is Tech! SCHOOL <br>Shirogane Takanawa Main Hall</p3>
+				<div class="right-access-common">
+					<h3>Hours<br><span>Address</span></h3>
+					<p3><span>Weekday</span>10:00~21:00<br>
+						<span1>Holiday</span1>10:00~23:00<br>Japan, 2 - chome Minami -<br> Azabu Minato- ku, Tokyo 12-3 <br> Life is Tech! SCHOOL Shirogane <br>Takanawa Main Hall
+					</p3>
+				</div>
 			</div>
 		</div>
-	</div>
+		<a href="#">Reservation</a>
 
+		<!--
+				<table>
+					<tr>
+						<th>Hours</th>
+						<div class="Weekday">
+							<td>Weekday</td>
+							<td>10:00~21:00</td>
+						</div>
+						
+							<div class="Holiday">
+								<td>Holiday</td>
+								<td>10:00~23:00</td>
+							</div>
+
+
+					</tr>
+				</table>
+-->
+	</div>
 	<!--ここからフッター-->
+	<footer>
+		<p>Copyright © Ryujin. All Rights Reserved.</p>
+	</footer>
+
+
+	<script src="https://code.jquery.com/jquery-2.1.4.js" integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4=" crossorigin="anonymous"></script>
+	<script src="index.js"></script>
 </body></html>
