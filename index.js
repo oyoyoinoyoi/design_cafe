@@ -47,7 +47,7 @@ jQuery(function () {
 			var scroll = jQuery(window).scrollTop();
 			var windowHeight = jQuery(window).height();
 			if (scroll > elemPos - windowHeight + 100) {
-				jQuery(this).addClass('.scrollin');
+				jQuery(this).addClass('scrollin');
 			}
 		});
 	});

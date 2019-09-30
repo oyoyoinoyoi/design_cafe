@@ -6,32 +6,17 @@
 }
 
 .container {
-	width: 1020px;
+	width: 1275px;
 	height: 100vh;
 	margin: 0px auto;
 }
-
-//スクロールフェードイン
-#main {
-	width: 1020px;
-	height: 410vh;
-}
-
-.fadein {
-	opacity: 0;
-	transform: translate(0, 50px);
-	transition: all 0.5s;
-}
-.fadein.scrollin{
-		opacity: 1;
-		transform: translate(0, 0);
-	}
 
 //header story
 @mixin section1() {
 	h2 {
 		color: #fff;
 	}
+
 	p1 {
 		color: #fff;
 	}
@@ -74,10 +59,10 @@
 
 	nav {
 		font-size: 19px;
-		z-index: 2;
+		z-index: 90;
 		position: absolute;
 		float: left;
-		margin-left: 570px;
+		margin-left: 800px;
 		overflow: hidden;
 
 		li {
@@ -90,36 +75,62 @@
 				font-weight: 700;
 				color: #fff;
 				margin: 9px;
-//				&::after{
-//					content:'';
-//					transition:all 0.3s ease;
-//					border-bottom: 1px solid #FFF;
-//					display: block;
-//				}
-				&:hover{
-					transition: 0.03s;
-					border-bottom: 1px solid #FFF;
+
+				//				&::after{
+				//					content:'';
+				//					transition:all 0.3s ease;
+				//					border-bottom: 1px solid #FFF;
+				//					display: block;
+				//				}
+				&:hover {
+					transition: 0.1s;
+					border-bottom: 3px solid #FFF;
 				}
 			}
 		}
 	}
 
 	#slide {
+		background-color: #000;
 		position: relative;
+		width: 1275px;
+		height: 100vh;
 
 		img {
+			width: 100%;
+			height: 100%;
 			overflow: hidden;
-			width: 1020px;
-			height: 100vh;
 			position: absolute;
 			left: 0;
 			top: 0;
 		}
 	}
+
 }
 
 
 //--------------------------------------------------------------
+
+//スクロールフェードイン
+#main {
+	width: 100vh;
+	width: 100%;
+	height: 410vh;
+}
+
+.fadein {
+	opacity: 0;
+	transform: translate(0, 50px);
+	transition: all 0.5s;
+}
+
+.fadein.scrollin {
+	opacity: 1;
+	transform: translate(0, 0);
+}
+
+//--------------------------------------------------------------
+
 @mixin about-common() {
 	width: 25%;
 	height: 50vh;
@@ -171,10 +182,9 @@
 	background-color: #f9f9f9;
 
 	.box-about {
-		width: 100%;
-		height: 50vh;
+		width: 85%;
 		position: relative;
-		left: 9.5%;
+		left: 15%;
 		top: 25%;
 
 		.left-about {
@@ -372,7 +382,7 @@
 		text-align: center;
 		text-decoration: none;
 		padding: 7px 14px;
-		margin: 0px 440px;
+		margin: 0px 550px;
 		background-color: #182b2e;
 		color: #fff;
 		border-radius: 5px;
@@ -417,7 +427,7 @@
 //			}
 
 footer {
-	width: 1020px;
+	width: 100%;
 	margin: 0px auto;
 	padding: 30px 0px;
 	text-align: center;
