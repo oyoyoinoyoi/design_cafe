@@ -21,12 +21,11 @@
 	opacity: 0;
 	transform: translate(0, 50px);
 	transition: all 0.5s;
-
-	.scrollin {
+}
+.fadein.scrollin{
 		opacity: 1;
 		transform: translate(0, 0);
 	}
-}
 
 //header story
 @mixin section1() {
@@ -91,9 +90,14 @@
 				font-weight: 700;
 				color: #fff;
 				margin: 9px;
-				transition: 2s;
-
-				&:hover {
+//				&::after{
+//					content:'';
+//					transition:all 0.3s ease;
+//					border-bottom: 1px solid #FFF;
+//					display: block;
+//				}
+				&:hover{
+					transition: 0.03s;
 					border-bottom: 1px solid #FFF;
 				}
 			}
