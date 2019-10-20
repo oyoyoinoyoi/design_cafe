@@ -3,6 +3,9 @@
 
 <head>
 	<meta charset="UTF-8">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
 	<title>DesignCafe</title>
 	<link rel="stylesheet" href="sass/common.css">
 
@@ -11,9 +14,42 @@
 </head>
 
 <body>
-	<!--ここからヘッダー-->
-	<div id="header" class="container">
-		<nav>
+
+	<!-- pc版 -->
+	<nav id="global-nav">
+		<ul>
+			<li><a href="#header">HOME</a></li>
+			<li><a href="#about">ABOUT</a></li>
+			<li><a href="#story">STORY</a></li>
+			<li><a href="#menu">MENU</a></li>
+			<li><a href="#access">ACCESS</a></li>
+		</ul>
+	</nav>
+	
+	<header class="container">
+		<div class="home">
+			<h2>Design Cafe</h2>
+			<p1>Welcome to Designer</p1>
+		</div>
+
+		<div id="slide">
+			<img src="img/background01.jpg">
+			<img src="img/background02.jpg">
+			<img src="img/background03.jpg">
+			<img src="img/background04.jpg">
+		</div>
+
+
+	</header>
+
+
+	<!-- レスポンシブ版 -->
+	<div class="cp_offcm01">
+		<input type="checkbox" id="cp_toggle01">
+
+		<label for="cp_toggle01"><span></span></label>
+
+		<div class="cp_menu">
 			<ul>
 				<li><a href="#header">HOME</a></li>
 				<li><a href="#about">ABOUT</a></li>
@@ -21,19 +57,10 @@
 				<li><a href="#menu">MENU</a></li>
 				<li><a href="#access">ACCESS</a></li>
 			</ul>
-		</nav>
-		<div class="home">
-			<h2>Design Cafe</h2>
-			<p1>Welcome to Designer</p1>
 		</div>
-		<div id="slide">
-			<img src="img/background01.jpg"w>
-			<img src="img/background02.jpg">
-			<img src="img/background03.jpg">
-			<img src="img/background04.jpg">
-		</div>
-
 	</div>
+
+
 
 	<!--	//---------------------------------------------------------------->
 	<!--ここからメインコンテンツ-->
@@ -141,12 +168,13 @@
 -->
 		</div>
 
-	<!--ここからフッター-->
-	<footer>
-		<p>Copyright © Ryujin. All Rights Reserved.</p>
-	</footer>
-	<!--//---------------------------------------------------------------->
-</div>
+		<!--ここからフッター-->
+		<footer>
+			<p>Copyright © Ryujin. All Rights Reserved.</p>
+		</footer>
+		<!--//---------------------------------------------------------------->
+	</div>
 	<script src="https://code.jquery.com/jquery-2.1.4.js" integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4=" crossorigin="anonymous"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="index.js"></script>
 </body></html>
