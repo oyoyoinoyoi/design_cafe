@@ -11,6 +11,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
 
 <body>
@@ -18,18 +19,20 @@
 	<!-- pc版 -->
 	<nav id="global-nav">
 		<ul>
-			<li><a href="#header">HOME</a></li>
+			<li><a href="#">HOME</a></li>
 			<li><a href="#about">ABOUT</a></li>
 			<li><a href="#story">STORY</a></li>
 			<li><a href="#menu">MENU</a></li>
 			<li><a href="#access">ACCESS</a></li>
 		</ul>
 	</nav>
-	
+
 	<header class="container">
 		<div class="home">
 			<h2>Design Cafe</h2>
 			<p1>Welcome to Designer</p1>
+			<a href="#">Reservation</a>
+
 		</div>
 
 		<div id="slide">
@@ -44,6 +47,8 @@
 
 
 	<!-- レスポンシブ版 -->
+
+
 	<div class="cp_offcm01">
 		<input type="checkbox" id="cp_toggle01">
 
@@ -99,12 +104,15 @@
 		<div id="story" class="container fadein">
 			<div class="left-story">
 				<!--		画像-->
-				<img src="img/mind.jpg" alt="mind2" width="100%">
+				<img class="mind" src="img/mind.jpg" alt="mind2" width="100%">
+
 			</div>
 			<div class="right-story">
-				<!--	言葉-->
-				<h2>DISCOVER<br>OUR STORY</h2>
-				<p1>Dining cafe where you can spend your time while<br> drinking coffee and wine in delicious meals in a <br>comfortable space like lush green cozy "Oasis<br> no Yoriki".<br>We are offering a new lifestyle space that fuses <br>quietly alone, people who enjoy spending time <br>with friends, dining cafes that can be relaxed at <br>their own pace and state-of-the-art Internet <br>environment.</p1>
+				<!--					言葉-->
+				<div class="text">
+					<h2>DISCOVER&nbsp;<br>OUR STORY</h2>
+					<p1>Dining cafe where you can spend your time while<br> drinking coffee and wine in delicious meals in a <br>comfortable space like lush green cozy "Oasis<br> no Yoriki".<br>We are offering a new lifestyle space that fuses <br>quietly alone, people who enjoy spending time <br>with friends, dining cafes that can be relaxed at <br>their own pace and state-of-the-art Internet <br>environment.</p1>
+				</div>
 			</div>
 
 		</div>
@@ -140,8 +148,13 @@
 					<!--			文字-->
 					<div class="right-access-common">
 						<h3>Hours<br><span>Address</span></h3>
-						<p3><span>Weekday</span>10:00~21:00<br>
-							<span1>Holiday</span1>10:00~23:00<br>Japan, 2 - chome Minami -<br> Azabu Minato- ku, Tokyo 12-3 <br> Life is Tech! SCHOOL Shirogane <br>Takanawa Main Hall
+						<p3>
+							<!--							<span3>Hours</span3>-->
+							<span1>Weekday10:00~21:00<br>Holiday10:00~23:00</span1><br>
+							<!--							<span3>Address</span3>-->
+							<span1>
+								<span2> Japan, 2 - chome Minami -<br> Azabu Minato- ku, Tokyo 12-3 <br> Life is Tech! SCHOOL Shirogane <br>Takanawa Main Hall</span2>
+							</span1>
 						</p3>
 					</div>
 				</div>
@@ -172,9 +185,16 @@
 		<footer>
 			<p>Copyright © Ryujin. All Rights Reserved.</p>
 		</footer>
+
+		<div class="up">
+			<a href="#"><img src="img/up.png" alt="" width="5%"><p>TOP</p></a>
+		</div>
+
 		<!--//---------------------------------------------------------------->
 	</div>
 	<script src="https://code.jquery.com/jquery-2.1.4.js" integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4=" crossorigin="anonymous"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="index.js"></script>
-</body></html>
+</body>
+
+</html>

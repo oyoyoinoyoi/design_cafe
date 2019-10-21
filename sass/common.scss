@@ -37,6 +37,8 @@
 	}
 }
 
+$green: #182b2e;
+
 //--------------------------------------------------------------
 //.inner {
 //	width: 100%;
@@ -82,19 +84,18 @@
 }
 
 #global-nav {
-	/* background-color: red; */
-	width: 100%;
+	//background-color: red;
+	width: 100vw;
 	display: inline;
 	font-size: 2vw;
 	z-index: 90;
 	position: absolute;
-	float: left;
+	right: 1vw;
 	overflow: hidden;
-	margin-left: 50vw;
 
 	li {
 		list-style-type: none;
-		float: left;
+		float: right;
 
 		a {
 			text-decoration: none;
@@ -102,6 +103,7 @@
 			font-weight: 700;
 			color: #ffffff;
 			margin: 1vw;
+
 			&:hover {
 				transition: 0.1s;
 				border-bottom: 3px solid #ffffff;
@@ -109,470 +111,783 @@
 		}
 	}
 }
-	header {
-		@include section1();
+
+header {
+	@include section1();
+	height: 100vh;
+
+	.home {
+		width: 100%;
+		left: 0px;
+		z-index: 2;
+		position: absolute;
+		top: 40vh;
+		//		left: 36vw;
+		text-align: center;
+		display: block;
+
+		h2 {
+			font-weight: 700;
+			font-size: 5vw;
+		}
+
+		p1 {
+			font-weight: 300;
+			font-size: 2vw;
+		}
+
+		a {
+			display: none;
+		}
+
+		.address {
+			display: none;
+		}
+	}
+
+	#slide {
+		position: relative;
+		width: 100vw;
 		height: 100vh;
 
-		.home {
-			z-index: 2;
+		img {
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
 			position: absolute;
-			top: 40vh;
-			left: 36vw;
+			left: 0;
+			top: 0;
+			object-fit: cover;
+		}
+	}
+
+}
+
+
+//--------------------------------------------------------------
+
+//スクロールフェードイン
+#main {
+	width: 100vw;
+	height: 410vh;
+}
+
+.fadein {
+	opacity: 0;
+	transform: translate(0, 50px);
+	transition: all 0.5s;
+}
+
+.fadein.scrollin {
+	opacity: 1;
+	transform: translate(0, 0);
+}
+
+//--------------------------------------------------------------
+
+@mixin about-common() {
+	width: 20vw;
+	height: 50vh;
+	background-color: #fff;
+	float: left;
+	margin-right: 3%;
+	position: relative;
+	border-radius: 10px;
+	box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.03);
+	margin-top: 5vh;
+}
+
+@mixin about-text-common() {
+	img {
+		border-radius: 10px 10px 0px 0px;
+		height: 25vh;
+		position: relative;
+	}
+
+	h3 {
+		font-size: 1.5vw;
+		display: inline-block;
+		position: relative;
+		top: 50%;
+		left: 3%;
+		margin-top: 3vh;
+	}
+
+	p3 {
+		color: #b1b1b1;
+		display: block;
+		margin-top: 1.5vh;
+		margin-left: 1.8vh;
+		top: 50%;
+		font-size: 1.2vw;
+		line-height: 3vh;
+		//		//ロードしたら行間変わる不安定だったけどいけた
+		//		span1 {
+		//			line-height: 3em;
+		//		}
+		//
+		//		span2 {
+		//			line-height: 2em;
+		//		}
+	}
+}
+
+@mixin about-common-res() {
+	width: 100%;
+	height: 50vh;
+	background-color: #fff;
+	float: left;
+	margin-right: 3%;
+	position: relative;
+	border-radius: 10px;
+	box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.03);
+}
+
+@mixin about-text-common-res() {
+	img {
+		border-radius: 10px 10px 0px 0px;
+		height: 25vh;
+		position: relative;
+	}
+
+	h3 {
+		font-size: 7vw;
+		display: inline-block;
+		position: relative;
+		top: 50%;
+		left: 3%;
+		margin-top: 3vh;
+	}
+
+	p3 {
+		color: #b1b1b1;
+		display: block;
+		margin-top: 1.5vh;
+		margin-left: 1.8vh;
+		top: 50%;
+		font-size: 5vw;
+		line-height: 3vh;
+	}
+}
+
+#about {
+	height: 100vh;
+	@include section2();
+	background-color: #f9f9f9;
+	//	background-color: red;
+
+	.box-about {
+		width: 100%;
+		position: relative;
+		top: 25vh;
+		left: 17vw;
+
+		.left-about {
+			@include about-common();
+			@include about-text-common();
+		}
+
+		.center-about {
+			@include about-common();
+			@include about-text-common();
+		}
+
+		.right-about {
+			@include about-common();
+			@include about-text-common();
+		}
+	}
+}
+
+//--------------------------------------------------------------
+#story {
+	height: 100vh;
+	background-color: #182b2e;
+
+	.left-story {
+		width: 50%;
+		height: auto;
+		overflow: hidden;
+		float: left;
+
+		img {
+			object-fit: cover;
+			height: 100vh;
+		}
+	}
+
+	.right-story {
+		width: 50%;
+		height: 100vh;
+		float: right;
+		display: block;
+		position: relative;
+		top: 25vh;
+		@include section1();
+
+		.text {
+			width: 60%;
+			height: 100%;
 			display: block;
+			margin: 0 auto;
 
 			h2 {
-				font-weight: 700;
-				font-size: 5vw;
+				font-size: 2.5vw;
+				line-height: 3vw;
 			}
 
 			p1 {
-				margin-left: 4.2vw;
-				font-weight: 300;
-				font-size: 2vw;
+				font-weight: 100;
+				font-size: 1vw;
+				line-height: 3vw;
 			}
 		}
-
-		#slide {
-			position: relative;
-			width: 100vw;
-			height: 100vh;
-			img {
-				width: 100%;
-				height: 100%;
-				overflow: hidden;
-				position: absolute;
-				left: 0;
-				top: 0;
-			}
-		}
-
 	}
 
+}
 
-	//--------------------------------------------------------------
+//--------------------------------------------------------------
+@mixin menu-common() {
+	width: 30vw;
+	height: 50vh;
+	background-color: #fff;
+	float: left;
+	margin-right: 3%;
+	position: relative;
+	border-radius: 10px;
+	box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.03);
+}
 
-	//スクロールフェードイン
-	#main {
-		width: 100vw;
-		height: 410vh;
+@mixin menu-text-common() {
+	img {
+		width: 100%;
+		height: 60%;
+		border-radius: 10px 10px 0px 0px;
 	}
 
-	.fadein {
-		opacity: 0;
-		transform: translate(0, 50px);
-		transition: all 0.5s;
+	h3 {
+		color: #182b2e;
+		font-size: 40px;
+		display: block;
+		margin: 10px 0px 0px 10px;
+		border-left: 13px solid #182b2e;
+		padding-left: 10px;
+	}
+}
+
+@mixin menu-common-res() {
+	width: 100%;
+	height: 100%;
+	float: left;
+	margin-right: 3%;
+	position: relative;
+	border-radius: 0px;
+	box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.03);
+}
+
+@mixin menu-text-common-res() {
+	img {
+		width: 100%;
+		height: auto;
+		border-radius: 10px 10px 10px 10px;
 	}
 
-	.fadein.scrollin {
-		opacity: 1;
-		transform: translate(0, 0);
+	h3 {
+		color: #182b2e;
+		font-size: 40px;
+		display: block;
+		margin: 10px 0px 0px 10px;
+		border-left: 13px solid #182b2e;
+		padding-left: 10px;
 	}
+}
 
-	//--------------------------------------------------------------
+#menu {
+	height: 100vh;
+	@include section2();
+	display: inline-block;
+	background-color: #f9f9f9;
 
-	@mixin about-common() {
-		width: 25%;
-		height: 50vh;
-		background-color: #fff;
-		float: left;
-		margin-right: 3%;
+	.menu-contant {
+		width: 100%;
+		overflow: hidden;
+		height: 40vh;
 		position: relative;
-		border-radius: 10px;
-		box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.03);
-	}
+		margin: 0 auto;
+		top: 15vh;
 
-	@mixin about-text-common() {
-		img {
-			border-radius: 10px 10px 0px 0px;
-			height: 25vh;
-			position: relative;
+		.coffee {
+			margin-left: 18.5vw;
+			@include menu-common();
+			@include menu-text-common();
 		}
 
-		h3 {
-			font-size: 1.5vw;
+		.tea {
+			@include menu-common();
+			@include menu-text-common();
+		}
+	}
+
+}
+
+//--------------------------------------------------------------
+@mixin access-common() {
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+@mixin access-common-res() {
+	width: 100%;
+	height: 50%;
+	float: left;
+}
+
+//アクセスの詳細テーブルでできるかも思ったけど諦めた残り
+//@mixin right-access-common() {
+//	display: block;
+//	td {
+//		display: block;
+//	}
+//
+//	td1 {
+//		display: block;
+//	}
+//}
+
+@mixin address-common() {
+	h3 {
+		float: left;
+		display: block;
+		position: relative;
+		top: 10vh;
+		left: 2vw;
+		line-height: 0px;
+		font-size: 2vw;
+
+		span {
+			line-height: 20vh;
+		}
+	}
+
+	p3 {
+		letter-spacing: 0.2vw;
+		color: #b1b1b1;
+		float: left;
+		display: block;
+		position: relative;
+		top: 7vh;
+		left: 3vw;
+		font-size: 1.5vw;
+		line-height: 4vh;
+		font-size: 1.5vw;
+
+		span1 {
+
+			letter-spacing: 0.1vh;
 			display: inline-block;
-			position: relative;
-			top: 50%;
-			left: 3%;
-			margin-top: 3vh;
+			//						margin-left: 8vw;
+			line-height: 5.5vh;
 		}
 
-		p3 {
-			color: #b1b1b1;
-			display: block;
-			margin-top: 1.5vh;
-			margin-left: 1.8vh;
-			top: 50%;
-			font-size: 1.2vw;
-			line-height: 3vh;
-			//		//ロードしたら行間変わる不安定だったけどいけた
-			//		span1 {
-			//			line-height: 3em;
-			//		}
-			//
-			//		span2 {
-			//			line-height: 2em;
-			//		}
+		span2 {
+			letter-spacing: 0.1vh;
+			display: inline-block;
+			//						margin-left: 8vw;
+			line-height: 4.5vh;
+		}
+	}
+}
+
+@mixin address-common-res() {
+	h3 {
+		top: 6vh;
+		left: 2vw;
+		font-size: 7vw;
+	}
+
+	p3 {
+		letter-spacing: 0.2vw;
+		top: 3.4vh;
+		left: 4.5vw;
+		font-size: 1.5vw;
+		font-size: 4.3vw;
+
+		span1 {
+			letter-spacing: 0.1vh;
+			display: inline-block;
+			line-height: 5.5vh;
+		}
+
+		span2 {
+			letter-spacing: 0.01vh;
+			display: inline-block;
+			line-height: 4.5vh;
+		}
+	}
+}
+
+#access {
+	//border: 1px solid #000;
+	height: 100vh;
+	//section2はaccessの装飾内容だぞ
+	@include section2();
+	display: block;
+	background-color: #f9f9f9;
+
+	.box-access {
+		width: 75%;
+		height: 50vh;
+		position: relative;
+		margin: 0 auto;
+		top: 25vh;
+		border-radius: 10px;
+		box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.07);
+
+		.left-access {
+			border-radius: 10px 0px 0px 10px;
+			@include access-common();
+			overflow: hidden;
+		}
+
+		.right-access {
+			border-radius: 0px 10px 10px 0px;
+			background-color: #fff;
+			@include access-common();
+		}
+
+		.right-access-common {
+			@include address-common();
 		}
 	}
 
-	#about {
-		height: 100vh;
-		@include section2();
-		background-color: #f9f9f9;
-		//	background-color: red;
 
-		.box-about {
-			width: 85%;
-			position: relative;
-			left: 15%;
-			top: 25%;
-
-			.left-about {
-				@include about-common();
-				@include about-text-common();
-			}
-
-			.center-about {
-				@include about-common();
-				@include about-text-common();
-			}
-
-			.right-about {
-				@include about-common();
-				@include about-text-common();
-			}
-		}
-	}
-
-	//--------------------------------------------------------------
-	#story {
-		height: 100vh;
+	a {
+		width: 20vw;
+		display: inline-block;
+		position: relative;
+		top: 30vh;
+		left: 40vw;
+		text-align: center;
+		text-decoration: none;
+		padding: 1vh 3vw;
+		margin: 0px auto;
 		background-color: #182b2e;
+		color: #fff;
+		border-radius: 5px;
+		font-weight: 700;
+		transition: 1s;
 
-		.left-story {
-			width: 50%;
+		&:hover {
+			color: #182b2e;
+			border: 1px solid #182b2e;
+			background-color: #fff;
+		}
+	}
+}
+
+footer {
+	width: 100%;
+	margin: 0px auto;
+	padding: 2vh 0px;
+	text-align: center;
+	background-color: #182b2e;
+	color: #fff;
+	font-weight: 700;
+	font-size: 2vw;
+}
+
+.up{
+	display: none;
+}
+
+//レスポンシブ-------------------------------------------------
+@media screen and (max-width:500px) {
+
+	#global-nav {
+		display: none;
+	}
+
+	header {
+		.home {
+			width: 100%;
+			top: 30vh;
+
+			h2 {
+				font-size: 18vw;
+			}
+
+			p1 {
+				display: inline-block;
+				font-size: 8vw;
+				margin-top: 1vh;
+			}
+
+			a {
+				//width: 50vw;
+				display: inline-block;
+				position: relative;
+				top: 10vh;
+				text-decoration: none;
+				padding: 2vh 4vw;
+				background-color: #182b2e;
+				color: #fff;
+				border-radius: 5px;
+				font-weight: 700;
+				font-size: 7vw;
+				transition: 0.5s;
+
+				&:hover {
+					color: #182b2e;
+					border: 1px solid #182b2e;
+					background-color: #fff;
+				}
+			}
+		}
+
+		#slide img {
+			//		width: auto;
+			//			height: 100vh;
+			overflow: hidden;
+		}
+	}
+
+	ul {
+		list-style: none;
+
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+	}
+
+	.cp_offcm01 {
+		position: absolute;
+		top: 3vh;
+		right: 20vw;
+		display: inline-block;
+		background-color: #fff;
+
+		/* menu */
+		.cp_menu {
+			z-index: 3;
+			position: fixed;
+			top: 0;
+			right: -100vw;
+			width: 70vw;
 			height: 100vh;
+			cursor: pointer;
+			-webkit-transition: 0.53s transform;
+			transition: 0.53s transform;
+			-webkit-transition-timing-function: cubic-bezier(.38, .52, .23, .99);
+			transition-timing-function: cubic-bezier(.38, .52, .23, .99);
+			background-color: $green;
+			opacity: 0.9;
+		}
+	}
+
+	.cp_offcm01 .cp_menu ul {
+		margin: 0;
+		padding: 0;
+
+		li {
+			list-style: none;
+
+			a {
+				font-size: 10vw;
+				display: block;
+				padding: 20px;
+				text-decoration: none;
+				color: #ffffff;
+			}
+		}
+	}
+
+	.cp_offcm01 #cp_toggle01 {
+		position: absolute;
+		display: none;
+		opacity: 0;
+	}
+
+	.cp_offcm01 #cp_toggle01:checked ~ .cp_menu {
+		-webkit-transform: translateX(-100vw);
+		transform: translateX(-100vw);
+	}
+
+	/* menu toggle */
+	.cp_offcm01 #cp_toggle01 ~ label {
+		display: block;
+		position: fixed;
+		padding-left: 10vw;
+		cursor: pointer;
+		-webkit-transition: 0.5s transform;
+		transition: 0.5s transform;
+		-webkit-transition-timing-function: cubic-bezier(.61, -0.38, .37, 1.27);
+		transition-timing-function: cubic-bezier(.61, -0.38, .37, 1.27);
+		text-align: center;
+		color: #fff;
+		z-index: 2;
+	}
+
+	.cp_offcm01 #cp_toggle01:checked ~ label {
+		-webkit-transform: translateX(-80vw);
+		transform: translateX(-80vw);
+	}
+
+	.cp_offcm01 #cp_toggle01 ~ label::before {
+		display: inline-block;
+		font-family: 'Font Awesome 5 Free';
+		content: "\f0c9";
+		font-weight: 900;
+		font-size: 10vw;
+	}
+
+	.cp_offcm01 #cp_toggle01:checked ~ label::before {
+		display: inline-block;
+		font-family: 'Font Awesome 5 Free';
+		content: "\f00d";
+		font-weight: 900;
+		font-size: 10vw;
+	}
+
+	#story {
+		.left-story {
+			width: 100%;
+			height: 70vh;
 			overflow: hidden;
 			float: left;
+
+			img {
+				object-position: 100% 100%;
+			}
+
 		}
 
 		.right-story {
-			width: 50%;
-			height: 100vh;
-			float: right;
-			display: block;
-			position: relative;
-			@include section1();
-
-			h2 {
-				line-height: 3vw;
-			}
-
-			p1 {
-				line-height: 3vw;
-			}
-		}
-
-	}
-
-	//--------------------------------------------------------------
-	@mixin menu-common() {
-		width: 30vw;
-		height: 50vh;
-		background-color: #fff;
-		float: left;
-		margin-right: 3%;
-		position: relative;
-		border-radius: 10px;
-		box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.03);
-	}
-
-	@mixin menu-text-common() {
-		img {
 			width: 100%;
-			height: 60%;
-			border-radius: 10px 10px 0px 0px;
-		}
+			height: 30%;
+			top: 1vh;
+			opacity: 0.8;
 
-		h3 {
-			color: #182b2e;
-			font-size: 40px;
-			display: block;
-			margin: 10px 0px 0px 10px;
-			border-left: 13px solid #182b2e;
-			padding-left: 10px;
+			.text {
+				width: 80%;
+
+				h2 {
+					br {
+						display: none;
+					}
+
+					font-size: 5vw;
+					line-height: 5vw;
+				}
+
+				p1 {
+					font-weight: 100;
+					font-size: 3vw;
+					line-height: 3vw;
+				}
+			}
+		}
+	}
+
+
+	#about {
+		height: 200vh;
+
+		.box-about {
+			width: 100%;
+			left: 0%;
+			top: 20vh;
+
+			.left-about {
+				@include about-common-res();
+				@include about-text-common-res();
+			}
+
+			.center-about {
+				@include about-common-res();
+				@include about-text-common-res();
+			}
+
+			.right-about {
+				@include about-common-res();
+				@include about-text-common-res()
+			}
 		}
 	}
 
 	#menu {
-		height: 100vh;
-		@include section2();
-		background-color: #f9f9f9;
+		height: 150vh;
 
 		.menu-contant {
-			width: 100%;
-			overflow: hidden;
-			height: 50vh;
-			position: relative;
-			margin: 0 auto;
-			top: 25%;
-
 			.coffee {
-				margin-left: 18.5vw;
-				@include menu-common();
-				@include menu-text-common();
+				margin-left: 0px;
+				@include menu-common-res();
+				@include menu-text-common-res();
 			}
 
 			.tea {
-				@include menu-common();
-				@include menu-text-common();
+				@include menu-common-res();
+				@include menu-text-common-res();
 			}
 		}
-
 	}
-
-	//--------------------------------------------------------------
-	@mixin access-common() {
-		width: 50%;
-		height: 100%;
-		float: left;
-	}
-
-	//アクセスの詳細テーブルでできるかも思ったけど諦めた残り
-	//@mixin right-access-common() {
-	//	display: block;
-	//	td {
-	//		display: block;
-	//	}
-	//
-	//	td1 {
-	//		display: block;
-	//	}
-	//}
-
 
 	#access {
-		height: 100vh;
-		//section2はaccessの装飾内容だぞ
-		@include section2();
-		display: block;
-		background-color: #f9f9f9;
+		height: 120vh;
 
 		.box-access {
-			width: 75%;
-			height: 50vh;
+			width: 100%;
+			height: 70vh;
 			position: relative;
-			left: 12.5%;
-			top: 25%;
+			top: 20vh;
 			border-radius: 10px;
 			box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.07);
 
 			.left-access {
 				border-radius: 10px 0px 0px 10px;
-				@include access-common();
+				@include access-common-res();
 				overflow: hidden;
 			}
 
 			.right-access {
 				border-radius: 0px 10px 10px 0px;
 				background-color: #fff;
-				@include access-common();
-
-				.right-access-common {
-
-					h3 {
-						float: left;
-						display: block;
-						position: relative;
-						top: 10vh;
-						left: 2vw;
-						line-height: 0px;
-						font-size: 2vw;
-
-						span {
-							line-height: 20vh;
-						}
-					}
-
-					p3 {
-						letter-spacing: 0.2vw;
-						color: #b1b1b1;
-						float: left;
-						display: block;
-						position: relative;
-						top: 7.5vh;
-						left: 3vw;
-						font-size: 1.5vw;
-						line-height: 4vh;
-
-						span {
-							margin-right: 2vw;
-							line-height: 33px;
-						}
-
-						span1 {
-							margin-right: 3vw;
-							line-height: 5.5vh;
-						}
-					}
-				}
+				@include access-common-res();
+				@include address-common-res();
 			}
 		}
+		a{
+			width: 30vw;
+			left: 35vw;
+		}}
 
-		a {
-			display: block;
-			position: relative;
-			top: 200px;
-			text-align: center;
-			text-decoration: none;
-			padding: 1vh 1.5vw;
-			margin: 0px 40vw;
-			background-color: #182b2e;
-			color: #fff;
-			border-radius: 5px;
-			font-weight: 700;
-			transition: 1s;
-
-			&:hover {
-				color: #182b2e;
-				border: 1px solid #182b2e;
-				background-color: #fff;
-			}
-		}
-	}
-
-	//
-	//			.Weekday {
-	//				display: block;
-	//				td {
-	//					display: block;
-	//					float: left;
-	//				}
-	//			}
-	//
-	//			.Holiday {
-	//				display: inline-block;
-	//				td {
-	//					display: block;
-	//					overflow: hidden;
-	//				}
-	//			}
-	//		}
-
-	//			.Weekday {
-	//				@include right-access-common();
-	//				background-color: #00e2cf;
-	//			}
-	//
-	//			.Holiday {
-	//				@include right-access-common();
-	//				background-color: #e61727;
-	//				/* 背景色指定 */
-	//			}
-
-	footer {
-		width: 100%;
+.up {
+	display: block;
+	width: 100%;
+	padding: 1.2% 0px;
+	position: relative;
+	bottom: 0px;
+	margin-top: 13%;
+	img {
+		display: block;
 		margin: 0px auto;
-		padding: 30px 0px;
+		transition: 1s;
+
+		&:hover {
+			transform: translateY(1px);
+		}
+	}
+
+	p {
+		font-size: 100%;
 		text-align: center;
-		background-color: #182b2e;
-		color: #fff;
-		font-weight: 700;
-		font-size: 14px;
-	}
-
-	//レスポンシブ-------------------------------------------------
-	@media screen and (max-width:500px) {
-
-		#global-nav {
-			display: none;
-		}
-
-		ul {
-			list-style: none;
-
-			a {
-				text-decoration: none;
-				color: inherit;
-			}
-		}
-
-		.cp_offcm01 {
-			position: absolute;
-			top: 20px;
-			right: 20px;
-			display: inline-block;
-		}
-
-		/* menu */
-		.cp_offcm01 .cp_menu {
-			position: fixed;
-			top: 0;
-			right: -100vw;
-			width: 70vw;
-			height: 100%;
-			cursor: pointer;
-			-webkit-transition: 0.53s transform;
-			transition: 0.53s transform;
-			-webkit-transition-timing-function: cubic-bezier(.38, .52, .23, .99);
-			transition-timing-function: cubic-bezier(.38, .52, .23, .99);
-			background-color: #607D8B;
-			opacity: 0.8;
-		}
-
-		.cp_offcm01 .cp_menu ul {
-			margin: 0;
-			padding: 0;
-		}
-
-		.cp_offcm01 .cp_menu li {
-			list-style: none;
-		}
-
-		.cp_offcm01 .cp_menu li a {
-			display: block;
-			padding: 20px;
+		color: $green;
+		letter-spacing: 0px;
 			text-decoration: none;
-			color: #ffffff;
-		}
-
-		.cp_offcm01 #cp_toggle01 {
-			position: absolute;
-			display: none;
-			opacity: 0;
-		}
-
-		.cp_offcm01 #cp_toggle01:checked ~ .cp_menu {
-			-webkit-transform: translateX(-100vw);
-			transform: translateX(-100vw);
-		}
-
-		/* menu toggle */
-		.cp_offcm01 #cp_toggle01 ~ label {
-			display: block;
-			padding: 0.5em;
-			cursor: pointer;
-			-webkit-transition: 0.5s transform;
-			transition: 0.5s transform;
-			-webkit-transition-timing-function: cubic-bezier(.61, -0.38, .37, 1.27);
-			transition-timing-function: cubic-bezier(.61, -0.38, .37, 1.27);
-			text-align: center;
-			color: #ffffff;
-		}
-
-		.cp_offcm01 #cp_toggle01:checked ~ label {
-			-webkit-transform: translateX(-70vw);
-			transform: translateX(-70vw);
-		}
-
-		.cp_offcm01 #cp_toggle01 ~ label::before {
-			font-family: 'FontAwesome';
-			content: '\f0c9';
-			font-size: 2em;
-		}
-
-		.cp_offcm01 #cp_toggle01:checked ~ label::before {
-			content: '\f00d';
-		}
 	}
+}
+	
+
+
+}
